@@ -1,36 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-  faMedium,
-  faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import {Image, Box, HStack } from "@chakra-ui/react";
 
-const socials = [
-  {
-    icon: faEnvelope,
-    url: "mailto: hello@example.com",
-  },
-  {
-    icon: faGithub,
-    url: "https://github.com",
-  },
-  {
-    icon: faLinkedin,
-    url: "https://www.linkedin.com",
-  },
-  {
-    icon: faMedium,
-    url: "https://medium.com",
-  },
-  {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com",
-  },
-];
+const logoImageUrl = require("../logos/Asset 16@4x.png") /* need require to get image from local or else would need to import it https://reactnative.dev/docs/images */
 
 const Header = () => {
   const headerRef = useRef(null);
@@ -78,37 +49,47 @@ const Header = () => {
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#18181b"
+      backgroundColor="#FFFFFF" /* Color of NavBar */
       ref={headerRef}
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
+      <Box color="black" fontWeight="bold" maxWidth="1280px" margin="0 auto">
         <HStack
           px={16}
           py={4}
           justifyContent="space-between"
           alignItems="center"
         >
+
           <nav>
-           {/* Add social media links based on the `socials` data
-           Using the map method to treverse the object array*/}
-            <HStack>
-              {socials.map(social => {
-                return(
-                  <div>
-                    <a href={social.url}>
-                    <FontAwesomeIcon icon={social.icon} size="2x" />
-                    </a>
-                  </div>
-                );
-              })}
+            <HStack spacing={8}>
+              {/* LOGO Design */}
+              <Image
+                boxSize='3em'
+                width='180px'  /* adjusting the size of nav image */
+                objectFit='cover'
+                src={logoImageUrl}
+                alt='Dan Abramov'
+              />
             </HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
-              {/* Add links to Projects and Contact me section */}
+              {/* Add links to Nav Items section */}
               <a href="/#contact-me" onClick={handleClick("contactme")}>Contact Me
               </a>
               <a href="/#projects" onClick={handleClick("projects")}>Projects
+              </a>
+              <a href="/#home" onClick={handleClick("home")}>Home
+              </a>
+              <a href="/#about" onClick={handleClick("about")}>About
+              </a>
+              <a href="/#menu" onClick={handleClick("menu")}>Menu
+              </a>
+              <a href="/#reservations" onClick={handleClick("reservations")}>Reservations
+              </a>
+              <a href="/#order-online" onClick={handleClick("#order-online")}>Order Online
+              </a>
+              <a href="/#login" onClick={handleClick("login")}>Login
               </a>
             </HStack>
           </nav>
