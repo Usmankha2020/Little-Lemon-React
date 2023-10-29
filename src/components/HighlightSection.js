@@ -1,51 +1,67 @@
 import React from "react";
 import FullScreenSection from "./FullScreenSection";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Center, Heading } from "@chakra-ui/react";
 import Card from "./Card";
+import YellowButton from "./YellowButton";
 
 const projects = [
   {
-    title: "React Space",
+    title: "Greek Salad",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+      "The famous greek salad of crispy lettuce, peppers, olives, and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
     getImageSrc: () => require("../images/photo1.jpg"),
   },
   {
-    title: "React Infinite Scroll",
+    title: "Bruchetta",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+      "Our Bruchetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil",
     getImageSrc: () => require("../images/photo2.jpg"),
   },
   {
-    title: "Photo Gallery",
+    title: "Lemon Dessert",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
+      "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined",
     getImageSrc: () => require("../images/photo3.jpg"),
-  },
-  {
-    title: "Event planner",
-    description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
   },
 ];
 
 const HighlightSection = () => {
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor="#FFFFFF"
       isDarkBackground
       p={8}
       alignItems="flex-start"
       spacing={8}
     >
-      <Heading as="h1" id="projects-section"> {/* We are using this id to smart scroll to this section in navbar */}
-        Featured Projects HIGHLIGHT SECTION
-      </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
+        gridTemplateColumns="75% 25%" //75 percent for 1st grid item(heading) and 25 percent for button
+        //gridGap={8}
+        //backgroundColor='rgba(255,0,0,.7)' //for debugging
+        width='100%' // to expand grid to 100 percent
+        //height='100%'
+      >
+        <Heading as="h1" id="projects-section" //{/* We are using this id to smart scroll to this section in navbar */}
+          color='#333333'
+          //backgroundColor= '#555555'
+        >
+          This Weeks specials!
+        </Heading>
+
+        {/* Add Online Menu Button */}
+        <YellowButton
+          alignSelf='center'
+          //backgroundColor= '#555555'
+        >
+            Online Menu
+        </YellowButton>
+      </Box>
+      <Box
+        display="grid"
+        gridTemplateColumns="repeat(3,minmax(0,1fr))"
         gridGap={8}
+        backgroundColor="#FFFFFF"
       >
         {projects.map((project) => (
           <Card
