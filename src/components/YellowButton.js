@@ -1,11 +1,37 @@
 import * as React from "react";
 import { Box } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 /**
  * Illustrates the use of children prop and spread operator
  */
 const YellowButton = ({ children, isDarkBackground, ...boxProps }) => {
   return (
+
+    <Button
+      rounded={'full'}
+      size={'lg'}
+      fontWeight={'normal'}
+      px={6}
+      colorScheme={'red'}
+      color={'black'}
+      bg={'#F4CE14'}
+      _hover={{ bg: 'red.500', color: 'white' }}
+      {...boxProps}
+      >
+      {children}
+  </Button>
+
+/*   <Button
+    rounded={'full'}
+    size={'lg'}
+    fontWeight={'normal'}
+    px={6}
+    leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}>
+    How It Works
+  </Button> */
+
+/*
         // Button from facebook.com
         <Box
           as='button'
@@ -37,10 +63,10 @@ const YellowButton = ({ children, isDarkBackground, ...boxProps }) => {
         //add props at end so as to apply props by overwritimg if requried
         {...boxProps}
         >
-        {/* children for button would be text of button */}
+        {/* children for button would be text of button /}
         {children}
         </Box>
-
+ */
 
   );
 };
