@@ -40,6 +40,10 @@ const ReserveATableSection = () => {
         //.min(2, 'Too Short!')
         //.max(50, 'Too Long!')
         .required('Required'),
+      lastName: Yup.string()
+        //.min(2, 'Too Short!')
+        //.max(50, 'Too Long!')
+        .required('Required'),
       email: Yup.string()
         .email('Invalid email address')
         .required('Required'),
@@ -73,20 +77,27 @@ const ReserveATableSection = () => {
           Reserve A Table Section
         </Heading>
 
-
-        
         <Box p={6} rounded="md" w="100%">
           {/* Adding onSubmit={formik.handleSubmit} to from */}
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
               <FormControl isInvalid={formik.errors.firstName && formik.touched.firstName}>
-                <FormLabel htmlFor="firstName">Name</FormLabel>
-                <Input 
+                <FormLabel htmlFor="firstName">First Name</FormLabel>
+                <Input
                   id="firstName"
-                  name="firstName"  
-                  {...formik.getFieldProps('firstName')}               
+                  name="firstName"
+                  {...formik.getFieldProps('firstName')}
                 />
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
+              </FormControl>
+              <FormControl isInvalid={formik.errors.lastName && formik.touched.lastName}>
+                <FormLabel htmlFor="lastName">Last Name</FormLabel>
+                <Input
+                  id="lastName"
+                  name="lastName"
+                  {...formik.getFieldProps('lastName')}
+                />
+                <FormErrorMessage>{formik.errors.lastName}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={formik.errors.email && formik.touched.email}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
@@ -99,17 +110,16 @@ const ReserveATableSection = () => {
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
-                <FormLabel htmlFor="type">Type of enquiry</FormLabel>
+                <FormLabel htmlFor="type">Occasion</FormLabel>
                 <Select id="type" name="type"  {...formik.getFieldProps('type')}>
-                  <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">
-                    Open source consultancy session
-                  </option>
-                  <option value="other">Other</option>
+                  <option value="none">--No Special Occasion</option>
+                  <option value="brithday">Brithday</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="engagement">Engagement</option>
                 </Select>
               </FormControl>
               <FormControl isInvalid={formik.errors.comment && formik.touched.comment} >
-                <FormLabel htmlFor="comment">Your message</FormLabel>
+                <FormLabel htmlFor="comment">Any other detials you would want to add</FormLabel>
                 <Textarea
                   id="comment"
                   name="comment"

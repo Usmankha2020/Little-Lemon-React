@@ -22,7 +22,6 @@ function App() {
         <TestimonialSection/>
         <AboutSection/>
         <ReserveATableSection/>
-        <ContactMeSection></ContactMeSection>
         <FooterSection/>
         <Alert/>
       </main>
