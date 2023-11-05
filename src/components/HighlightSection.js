@@ -21,7 +21,7 @@ const projects = [
     title: "Lemon Dessert",
     description:
       "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined",
-    getImageSrc: () => require("../images/photo3.jpg"),
+    getImageSrc: () => require("../images/photo2.jpg"),
   },
 ];
 
@@ -59,7 +59,7 @@ const HighlightSection = () => {
       </Box>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(3,minmax(0,1fr))"
+        gridTemplateColumns="repeat(3,minmax(0,1fr))" //Divide grid into 3 columns
         gridGap={8}
         backgroundColor="#FFFFFF"
       >
@@ -68,6 +68,7 @@ const HighlightSection = () => {
             key={project.title}
             title={project.title}
             description={project.description}
+            backgroundColor={'#EDEEEF'}
             imageSrc={project.getImageSrc()}
           />
         ))}

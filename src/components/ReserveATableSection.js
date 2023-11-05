@@ -60,7 +60,7 @@ const ReserveATableSection = () => {
       }
     }
   }, [response]);
-    
+
   return (
     <FullScreenSection
       isDarkBackground
@@ -72,6 +72,9 @@ const ReserveATableSection = () => {
         <Heading as="h1" id="contactme-section">
           Reserve A Table Section
         </Heading>
+
+
+        
         <Box p={6} rounded="md" w="100%">
           {/* Adding onSubmit={formik.handleSubmit} to from */}
           <form onSubmit={formik.handleSubmit}>

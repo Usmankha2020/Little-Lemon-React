@@ -3,56 +3,84 @@ import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
-const projects = [
+const testimonials = [
   {
-    title: "React Space",
+    title: "Micheal Caldwell",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
-    getImageSrc: () => require("../images/photo1.jpg"),
+      "This is the best Mediterranean food that I've ever had!",
+    getImageSrc: () => require("../images/testimonials/star.png"),
   },
   {
-    title: "React Infinite Scroll",
+    title: "Alan Chen",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
-    getImageSrc: () => require("../images/photo2.jpg"),
+      "My Shiba Inu, Mugi, really loved the cozy vibes and delicious food here.",
+    getImageSrc: () => require("../images/testimonials/star.png"),
   },
   {
-    title: "Photo Gallery",
+    title: "Casey Lau",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
-    getImageSrc: () => require("../images/photo3.jpg"),
+      "I've had some great Mediterranean food before, but none of them beats Little Lemon in flavor and texture.",
+    getImageSrc: () => require("../images/testimonials/star.png"),
   },
   {
-    title: "Event planner",
+    title: "John Rosenblum",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
-    getImageSrc: () => require("../images/photo4.jpg"),
+      "Great food, welcoming staff, cozy atmosphere. A great place to treat your kids to.",
+    getImageSrc: () => require("../images/testimonials/star.png"),
+  },
+  {
+    title: "Jim Reynor",
+    description:
+      "The food here really refreshed me after a late night shift at the local supply depot.",
+    getImageSrc: () => require("../images/testimonials/star.png"),
+  },
+  {
+    title: "Brian Dean",
+    description:
+      "I came to Little Lemon after a 5 hour flight from the East Coast. The food here tasted so delicious after the trip here.",
+    getImageSrc: () => require("../images/testimonials/star.png"),
+  },
+  {
+    title: "Tyler Tohmine",
+    description:
+      "The food here was fire!! Everyone should try this place out at least once if they live in Chicago.",
+    getImageSrc: () => require("../images/testimonials/star.png"),
+  },
+  {
+    title: "Jack Hu",
+    description:
+      "This restaurant served as a perfect dinner for me after a long night of studying. I would definitely order from here again!",
+    getImageSrc: () => require("../images/testimonials/star.png"),
   },
 ];
 
 const TestimonialSection = () => {
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor="#FFFFFF"
       isDarkBackground
       p={8}
       alignItems="flex-start"
-      spacing={8}
+      spacing={2}
     >
-      <Heading as="h1" id="projects-section"> {/* We are using this id to smart scroll to this section in navbar */}
-        Featured Projects TESTIMONIAL SECTION
+      <Heading as="h1" id="projects-section" alignSelf='center' color='#333333'>  {/* We are using this id to smart scroll to this section in navbar */}
+         Testimonials
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
+        gridTemplateColumns="repeat(4,minmax(0,1fr))"
         gridGap={8}
       >
-        {projects.map((project) => (
+        {testimonials.map((testimonial) => (
           <Card
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            imageSrc={project.getImageSrc()}
+            key={testimonial.title}
+            title={testimonial.title}
+            description={testimonial.description}
+            //backgroundColor={'#EDEEEF'}//background of box of card as per design
+            backgroundColor={'#80ABD7'}
+            objectFit='none' //img properties
+            boxSize='80px'
+            imageSrc={testimonial.getImageSrc()}
           />
         ))}
       </Box>

@@ -16,7 +16,7 @@ function App() {
     <ChakraProvider>
       <AlertProvider>
       <main>
-        <Header></Header>
+        <Header></Header> {/* Includes Navigation */}
         <HeroSection/>
         <HighlightSection/>
         <TestimonialSection/>

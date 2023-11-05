@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import {Image, Box, HStack } from "@chakra-ui/react";
 
-const logoImageUrl = require("../logos/Asset 16@4x.png") /* need require to get image from local or else would need to import it https://reactnative.dev/docs/images */
+const logoImageSrc = require("../logos/Asset 16@4x.png") /* need require to get image from local or else would need to import it https://reactnative.dev/docs/images */
 
 const Header = () => {
   const headerRef = useRef(null);
@@ -67,7 +67,7 @@ const Header = () => {
                 boxSize='3em'
                 width='180px'  /* adjusting the size of nav image */
                 objectFit='cover'
-                src={logoImageUrl}
+                src={logoImageSrc}
                 alt='Dan Abramov'
               />
             </HStack>

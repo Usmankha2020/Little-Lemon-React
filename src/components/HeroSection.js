@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, Image, Button, HStack, Heading, VStack } from "@chakra-ui/react";
+import { Box, Text, Card, Image, Button, HStack, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import YellowButton from "./YellowButton";
 
@@ -46,27 +46,16 @@ const HeroSection = () => (
 
     {/* VStack for Title, subTitle description and Reserver a table button */}
     <VStack alignItems='first baseline' > {/* alignItems='first baseline to justify content to left */}
-        <Heading as="h1" size='xl' noOfLines={1} color= '#F4CE14' fontSize={64}>
+        <Heading as="h1" size='xl' noOfLines={1} color='#F4CE14' fontSize={64}>
           {title}
         </Heading>
         {/* Added paddingBottom as g of Chicago text is being cut from buttom. Adding margin as per design  */}
         <Heading as="h1" size='xl' noOfLines={1} marginTop='-20px' paddingBottom='2px'>
           {subTitle}
         </Heading>
-        <p as="h4" size='md' noOfLines={1}>
+        <Text as="h4" size='md' noOfLines={5}>
           {description}
-        </p>
-        <Button>Reserve a Table</Button>
-        <Button
-          size='md'
-          height='48px'
-          width='200px'
-          border='2px'
-          borderColor='green.500'
-          backgroundColor={'#F4CE14'}
-        >
-          Reserve a Table
-        </Button>
+        </Text>
         <YellowButton>Reserve a Table</YellowButton>
     </VStack>
     <VStack alignItems='end'>
@@ -86,7 +75,7 @@ const HeroSection = () => (
       </Box>
     </VStack>
 
-{/* //TODO 
+{/* //TODO
 1. ADJUST HEIGHT OF Hero Section
 2. Change location of IMG and img as per design */}
 
